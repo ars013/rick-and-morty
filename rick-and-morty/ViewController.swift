@@ -6,14 +6,32 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
+    
+    private let textField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Search..."
+        tf.borderStyle = .roundedRect
+        tf.font = UIFont.systemFont(ofSize: 17)
+        tf.textColor = .black
+        tf.backgroundColor = .white
+        return tf
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupViews()
     }
 
-
+    func setupViews() {
+        view.addSubview(textField)
+        textField.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(40)
+        }
+    }
 }
 

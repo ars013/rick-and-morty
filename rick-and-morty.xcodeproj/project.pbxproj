@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		55A5EE1F2E57255900D5E19E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55A5EE1E2E57255900D5E19E /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		55A5EDDF2E559BF900D5E19E /* rick-and-morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rick-and-morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A5EE1F2E57255900D5E19E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = "rick-and-morty";
 			packageProductDependencies = (
+				55A5EE1E2E57255900D5E19E /* SnapKit */,
 			);
 			productName = "rick-and-morty";
 			productReference = 55A5EDDF2E559BF900D5E19E /* rick-and-morty.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 55A5EDD62E559BF900D5E19E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				55A5EE1D2E57255900D5E19E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 55A5EDE02E559BF900D5E19E /* Products */;
 			projectDirPath = "";
@@ -333,6 +342,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55A5EE1D2E57255900D5E19E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55A5EE1E2E57255900D5E19E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55A5EE1D2E57255900D5E19E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55A5EDD72E559BF900D5E19E /* Project object */;
 }
