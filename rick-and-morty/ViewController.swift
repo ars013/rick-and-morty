@@ -10,6 +10,8 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    private let presenter = Presenter()
+    
     private let textField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Search..."
@@ -50,7 +52,7 @@ class ViewController: UIViewController {
     
     @objc func getTextFromField() {
         if let text = textField.text, !text.isEmpty {
-            print("User entered: \(text)")
+            presenter.getCharacterName(text)
         } else {
             print("Text field is empty")
         }
