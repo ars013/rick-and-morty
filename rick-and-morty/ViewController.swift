@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    private let presenter = Presenter()
+    private lazy var presenter = Presenter(view: self)
     
     private let textField: UITextField = {
         let tf = UITextField()
@@ -33,7 +33,9 @@ class ViewController: UIViewController {
         setupViews()
     }
 
-    func setupViews() {
+    private func setupViews() {
+        title = "Explore the cartoon Rick and Morty"
+        view.backgroundColor = .systemBackground
         view.addSubview(textField)
         textField.snp.makeConstraints { make in
             make.center.equalToSuperview()
