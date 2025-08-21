@@ -15,7 +15,7 @@ final class CharacterTableViewCell: UITableViewCell {
     
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         return imageView
@@ -36,6 +36,7 @@ final class CharacterTableViewCell: UITableViewCell {
         avatarImageView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(12)
             make.leading.equalToSuperview().offset(16)
+            make.size.equalTo(64)
         }
         
         nameLabel.snp.makeConstraints { make in

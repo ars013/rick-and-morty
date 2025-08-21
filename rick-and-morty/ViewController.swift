@@ -12,6 +12,15 @@ final class ViewController: UIViewController {
     
     private lazy var presenter = Presenter(view: self)
     
+    private lazy var backgroundUIImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "Wallpaper")
+        imageView.frame = view.bounds
+        return imageView
+    }()
+    
     private let textField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Search..."
@@ -24,6 +33,10 @@ final class ViewController: UIViewController {
     
     private let checkButton: UIButton = {
         let button = UIButton(type: .system)
+        button.frame = CGRect(x: 0, y: 0, width: 350, height: 50)
+        button.backgroundColor = .systemBackground
+        button.setTitleColor(.lightGray, for: .normal)
+        button.layer.cornerRadius = 10
         button.setTitle("Get info about a cartoon character", for: .normal)
         return button
     }()
@@ -35,10 +48,10 @@ final class ViewController: UIViewController {
 
     private func setupViews() {
         title = "Explore the cartoon Rick and Morty"
-        view.backgroundColor = .systemBackground
+        view.addSubview(backgroundUIImageView)
         view.addSubview(textField)
         textField.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-100)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(40)
         }
